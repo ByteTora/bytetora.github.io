@@ -1,4 +1,4 @@
-* [前言](./docs/a-1备战面试.md)
+<!-- * [前言](./docs/a-1备战面试.md) -->
 * RAG
   <!-- * [什么是RAG](./content/01_simple_rag.mmd) -->
   * [第一章 简单RAG](./content/01_simple_rag.md)
