@@ -1,6 +1,6 @@
 * [前言](./docs/a-1备战面试.md)
 * RAG
-  * [什么是RAG](./content/01_simple_rag.mmd)
+  <!-- * [什么是RAG](./content/01_simple_rag.mmd) -->
   * [第一章 简单RAG](./content/01_simple_rag.md)
   * [第二章 语义块切分](./content/02_semantic_chunking.md)
   * [第三章 上下文增强检索](./content/03_context_enriched_rag.md)
