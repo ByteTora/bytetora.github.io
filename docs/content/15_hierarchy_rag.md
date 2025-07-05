@@ -68,7 +68,7 @@ embedding_model = os.getenv("EMBEDDING_MODEL_ID")
 pdf_path = "../../data/AI_Information.en.zh-CN.pdf"
 ```
 
-## 文档处理函数
+# 15.1 文档处理函数
 
 
 ```python
@@ -149,7 +149,7 @@ def chunk_text(text, metadata, chunk_size=1000, overlap=200):
 
 ```
 
-## 向量存储
+# 15.2 向量存储
 
 
 ```python
@@ -223,7 +223,7 @@ class SimpleVectorStore:
 
 ```
 
-## 创建嵌入
+# 15.3 创建嵌入
 
 
 ```python
@@ -264,7 +264,7 @@ def create_embeddings(texts):
 
 ```
 
-## 摘要函数
+# 15.4 摘要函数
 
 
 ```python
@@ -304,7 +304,7 @@ def generate_page_summary(page_text):
 
 ```
 
-## 分级文档处理
+# 15.5 分级文档处理
 
 
 ```python
@@ -390,7 +390,7 @@ def process_document_hierarchically(pdf_path, chunk_size=1000, chunk_overlap=200
 
 ```
 
-## 分级检索
+# 15.6 分级检索
 
 
 ```python
@@ -448,7 +448,7 @@ def retrieve_hierarchically(query, summary_store, detailed_store, k_summaries=3,
 
 ```
 
-## 利用上下文生成回答
+# 15.7 利用上下文生成回答
 
 
 ```python
@@ -494,7 +494,7 @@ def generate_response(query, retrieved_chunks):
 
 ```
 
-## 用分级检索实现完整的RAG流程
+# 15.8 使用分级检索实现完整的RAG流程
 
 
 ```python
@@ -562,7 +562,7 @@ def hierarchical_rag(query, pdf_path, chunk_size=1000, chunk_overlap=200, k_summ
 
 ```
 
-## 标准 RAG（非分级，用于对比）
+# 15.9 标准 RAG（非分级，用于对比）
 
 
 ```python
@@ -633,7 +633,7 @@ def standard_rag(query, pdf_path, chunk_size=1000, chunk_overlap=200, k=15):
 
 ```
 
-## 评估函数
+# 15.10 评估函数
 
 
 ```python
@@ -832,7 +832,7 @@ def generate_overall_analysis(results):
     return response.choices[0].message.content
 ```
 
-## 分级RAG与标准RAG方法的评估
+# 15.11 分级RAG与标准RAG方法的评估
 
 
 ```python

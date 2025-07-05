@@ -51,7 +51,7 @@ embedding_model = os.getenv("EMBEDDING_MODEL_ID")
 pdf_path = "../../data/AI_Information.en.zh-CN.pdf"
 ```
 
-# 提取文本并识别章节标题
+# 4.1 提取文本并识别章节标题
 
 从 PDF 中提取文本，同时识别章节标题（块的可能标题）
 
@@ -80,7 +80,7 @@ def extract_text_from_pdf(pdf_path):
     return all_text  # 返回提取的文本
 ```
 
-## 文本分块与上下文标题
+## 4.1.1 文本分块与上下文标题
 
 为了提高检索效率，我们使用LLM模型为每个片段生成描述性标题
 
@@ -139,7 +139,7 @@ def chunk_text_with_headers(text, n, overlap):
     return chunks
 ```
 
-# 从 PDF 文件中提取和分块文本
+# 4.2 从 PDF 文件中提取和分块文本
 
 
 ```python
@@ -193,7 +193,7 @@ print("Content:", text_chunks[0]['text'])
     
 
 
-# 为标题和文本创建嵌入
+# 4.3 为标题和文本创建嵌入
 
 
 ```python
@@ -250,7 +250,7 @@ for chunk in tqdm(text_chunks, desc="Generating embeddings"):
     Generating embeddings: 100%|██████████| 13/13 [00:04<00:00,  2.78it/s]
 
 
-# 语义搜索
+# 4.4 语义搜索
 
 
 ```python
@@ -310,7 +310,7 @@ def semantic_search(query, chunks, k=5):
     return [x[0] for x in similarities[:k]]
 ```
 
-# 查询
+# 4.5 查询
 
 
 ```python
@@ -419,7 +419,7 @@ for i, chunk in enumerate(top_chunks):
     
 
 
-# 基于检索到的片段生成回答
+# 4.6 基于检索到的片段生成回答
 
 
 ```python
@@ -463,7 +463,7 @@ print("AI Response:\n", ai_response)
      可解释人工智能（XAI）旨在使人工智能系统更加透明易懂。XAI 技术正在开发中，旨在深入了解人工智能模型的决策方式，从而增强信任度和责任感。它被认为很重要，因为许多人工智能系统，尤其是深度学习模型，都是“黑匣子”，很难理解它们是如何做出决策的。增强透明度和可解释性对于建立信任和问责至关重要。
 
 
-# 评估
+# 4.7 评估
 
 
 ```python

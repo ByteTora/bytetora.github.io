@@ -63,7 +63,7 @@ embedding_model = os.getenv("EMBEDDING_MODEL_ID")
 pdf_path = "../../data/AI_Information.en.zh-CN.pdf"
 ```
 
-## 文档处理函数
+# 16.1 文档处理函数
 
 
 ```python
@@ -134,7 +134,7 @@ def chunk_text(text, chunk_size=1000, overlap=200):
     return chunks  # 返回包含元数据的文本块列表
 ```
 
-## 向量存储
+# 16.2 向量存储
 
 
 ```python
@@ -208,7 +208,7 @@ class SimpleVectorStore:
 
 ```
 
-## 创建嵌入
+# 16.3 创建嵌入
 
 
 ```python
@@ -249,7 +249,7 @@ def create_embeddings(texts):
 
 ```
 
-## 文档处理流程
+# 16.4 文档处理流程
 
 
 ```python
@@ -298,7 +298,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
     return vector_store
 ```
 
-## 假设文档生成
+# 16.5 假设文档生成
 
 
 ```python
@@ -337,7 +337,7 @@ def generate_hypothetical_document(query, desired_length=1000):
     return response.choices[0].message.content
 ```
 
-## 完整的 HyDE RAG 实现
+# 16.6 完整的 HyDE RAG 实现
 
 
 ```python
@@ -386,7 +386,7 @@ def hyde_rag(query, vector_store, k=5, should_generate_response=True):
 
 ```
 
-## 用于对比的标准（直接）RAG 实现
+# 16.7 用于对比的标准（直接）RAG 实现
 
 
 ```python
@@ -429,7 +429,7 @@ def standard_rag(query, vector_store, k=5, should_generate_response=True):
 
 ```
 
-## 回答生成
+# 16.8 回答生成
 
 
 ```python
@@ -462,7 +462,7 @@ def generate_response(query, relevant_chunks):
     return response.choices[0].message.content
 ```
 
-## 评估函数
+# 16.9 评估函数
 
 
 ```python
@@ -647,7 +647,7 @@ def generate_overall_analysis(results):
     return response.choices[0].message.content
 ```
 
-## 可视化函数
+# 16.10 可视化函数
 
 
 ```python
@@ -709,7 +709,7 @@ def visualize_results(query, hyde_result, standard_result):
     plt.show()
 ```
 
-## 假设文档嵌入（HyDE）与标准 RAG 的评估
+# 16.11 假设文档嵌入（HyDE）与标准 RAG 的评估
 
 
 ```python

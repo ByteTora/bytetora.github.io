@@ -20,7 +20,7 @@
 - 根据查询并检索文档
 - 将检索出来的文本用于模型生成回答
 
-# 设置环境
+# 2.1 设置环境
 
 
 ```python
@@ -43,7 +43,7 @@ load_dotenv()
 
 
 
-# 从 PDF 文件中提取文本
+# 2.2 从 PDF 文件中提取文本
 
 
 ```python
@@ -97,7 +97,7 @@ print(extracted_text[:500])
     第⼆章：⼈⼯智能
 
 
-# 设置 OpenAI API 客户端
+# 2.3 设置 OpenAI API 客户端
 
 初始化 OpenAI 客户端以生成嵌入和响应
 
@@ -111,7 +111,7 @@ client = OpenAI(
 )
 ```
 
-# 创建句子级嵌入(sentence-level embedding)
+# 2.4 创建句子级嵌入(sentence-level embedding)
 
 将文本分割成句子并生成嵌入
 
@@ -163,7 +163,7 @@ print(f"Generated {len(embeddings)} sentence embeddings.")
     Generated 256 sentence embeddings.
 
 
-# 计算相似度差异
+# 2.5 计算相似度差异
 
 计算连续句子的余弦相似度
 
@@ -186,7 +186,7 @@ def cosine_similarity(vec1, vec2):
 similarities = [cosine_similarity(embeddings[i], embeddings[i + 1]) for i in range(len(embeddings) - 1)]
 ```
 
-# 实现语义分块 Semantic Chunking
+# 2.6 实现语义分块 Semantic Chunking
 
 实现了三种不同的方法来查找断点
 
@@ -466,7 +466,7 @@ breakpoints
 
 
 
-# 将文本分割成语义块
+# 2.7 将文本分割成语义块
 
 将文本基于断点进行分割
 
@@ -515,7 +515,7 @@ print(text_chunks[0])
     ⼈⼯智能 (AI) 是指数字计算机或计算机控制的机器⼈执⾏通常与智能⽣物相关的任务的能⼒。
 
 
-# 语义块创建嵌入
+# 2.8 语义块创建嵌入
 
 为每个片段创建嵌入，以便后续检索
 
@@ -538,7 +538,7 @@ def create_embeddings(text_chunks):
 chunk_embeddings = create_embeddings(text_chunks)
 ```
 
-# 语义搜索
+# 2.9 语义搜索
 
 余弦相似度来检索最相关的片段
 
@@ -603,7 +603,7 @@ for i, chunk in enumerate(top_chunks):
     ========================================
 
 
-# 基于检索到的片段生成响应
+# 2.10 基于检索到的片段生成响应
 
 
 
@@ -662,7 +662,7 @@ print(ai_response)
     综上所述，可解释人工智能对于提升AI系统的透明度、信任度、安全性和合规性等方面都具有重要意义。
 
 
-# 评估人工智能响应
+# 2.11 评估人工智能响应
 
 
 ```python

@@ -68,7 +68,7 @@ embedding_model = os.getenv("EMBEDDING_MODEL_ID")
 pdf_path = "../../data/AI_Information.en.zh-CN.pdf"
 ```
 
-## 文档处理函数
+# 13.1 文档处理函数
 
 
 ```python
@@ -155,7 +155,7 @@ def clean_text(text):
 
 ```
 
-## 创建向量存储
+# 13.2 创建向量存储
 
 
 ```python
@@ -288,7 +288,7 @@ class SimpleVectorStore:
 
 ```
 
-## BM25 检索
+# 13.3 BM25 检索
 
 
 
@@ -366,7 +366,7 @@ def bm25_search(bm25, chunks, query, k=5):
 
 ```
 
-## 混合检索函数
+# 13.4 混合检索函数
 
 
 ```python
@@ -442,7 +442,7 @@ def fusion_retrieval(query, chunks, vector_store, bm25_index, k=5, alpha=0.5):
 
 ```
 
-## 文档处理流程
+# 13.5 文档处理流程
 
 
 ```python
@@ -489,7 +489,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
 
 ```
 
-## 回答生成
+# 13.6 回答生成
 
 
 ```python
@@ -531,7 +531,7 @@ def generate_response(query, context):
 
 ```
 
-## 主要的检索函数
+# 13.7 主要的检索函数
 
 
 ```python
@@ -568,7 +568,7 @@ def answer_with_fusion_rag(query, chunks, vector_store, bm25_index, k=5, alpha=0
 
 ```
 
-## 比较检索方法
+# 13.8 比较检索方法
 
 
 ```python
@@ -638,7 +638,7 @@ def bm25_only_rag(query, chunks, bm25_index, k=5):
 
 ```
 
-## 评估函数
+# 13.9 评估函数
 
 
 ```python
@@ -762,7 +762,7 @@ def evaluate_responses(query, vector_response, bm25_response, fusion_response, r
 
 ```
 
-## 完整的评估流程
+# 13.10 完整的评估流程
 
 
 ```python
@@ -890,7 +890,7 @@ def generate_overall_analysis(results):
 
 ```
 
-## 评估混合检索
+# 13.11 评估混合检索
 
 
 ```python

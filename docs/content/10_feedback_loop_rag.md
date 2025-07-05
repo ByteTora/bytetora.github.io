@@ -199,7 +199,7 @@ def create_embeddings(text):
     return [item.embedding for item in response.data]
 ```
 
-## 反馈系统函数
+# 10.1 反馈系统函数
 
 核心反馈系统的组件函数
 
@@ -272,7 +272,7 @@ def load_feedback_data(feedback_file="feedback_data.json"):
 
 ```
 
-## 具有反馈认知的文档处理
+# 10.2 具有反馈认知的文档处理
 
 
 ```python
@@ -330,7 +330,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
 
 ```
 
-## 基于反馈的相关性调整
+# 10.3 基于反馈的相关性调整
 
 
 ```python
@@ -451,7 +451,7 @@ def adjust_relevance_scores(query, results, feedback_data):
 
 ```
 
-## 通过反馈微调我们的索引
+# 10.4 通过反馈微调我们的索引
 
 
 
@@ -524,7 +524,7 @@ def fine_tune_index(current_store, chunks, feedback_data):
 
 ```
 
-## 使用循环反馈的完整 RAG 管道
+# 10.5 使用循环反馈的完整 RAG 管道
 
 
 ```python
@@ -618,7 +618,7 @@ def rag_with_feedback_loop(query, vector_store, feedback_data, k=5):
 
 ```
 
-## 完整的工作流程：从初始设置到反馈收集
+# 10.6 完整的工作流程：从初始设置到反馈收集
 
 
 
@@ -690,9 +690,9 @@ def full_rag_workflow(pdf_path, query, feedback_data=None, feedback_file="feedba
 
 ```
 
-## 评估循环反馈
+# 10.7 评估循环反馈
 
-### 评估过程中的辅助函数
+## 10.7.1 评估过程中的辅助函数
 
 
 ```python
@@ -803,7 +803,7 @@ def compare_results(queries, round1_results, round2_results, reference_answers=N
 
 ```
 
-### 评估函数
+## 10.7.2 评估函数
 
 
 ```python
@@ -905,7 +905,7 @@ def evaluate_feedback_loop(pdf_path, test_queries, reference_answers=None):
 
 ```
 
-## 循环反馈评估（自定义验证查询）
+# 10.8 循环反馈评估（自定义验证查询）
 
 
 
@@ -1186,7 +1186,7 @@ result = full_rag_workflow(
     反馈已记录。感谢您的参与！
 
 
-## 可视化评估结果
+# 10.9 可视化评估结果
 
 
 ```python

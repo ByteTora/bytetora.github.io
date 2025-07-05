@@ -237,7 +237,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
     return chunks, store
 ```
 
-## 查询分类
+# 11.1 查询分类
 
 
 ```python
@@ -291,8 +291,8 @@ def classify_query(query):
 
 ```
 
-## 专项检索策略实现方案
-### 1. 事实性策略 - 精准导向
+# 11.2 专项检索策略实现方案
+## 11.2.1 事实性策略 - 精准导向
 
 
 ```python
@@ -361,7 +361,7 @@ def factual_retrieval_strategy(query, vector_store, k=4):
 
 ```
 
-### 2. 分析性策略 - 全面覆盖
+## 11.2.2 分析性策略 - 全面覆盖
 
 
 
@@ -441,7 +441,7 @@ def analytical_retrieval_strategy(query, vector_store, k=4):
 
 ```
 
-### 3. 观点性策略 - 多元视角
+## 11.2.3 观点性策略 - 多元视角
 
 
 
@@ -524,7 +524,7 @@ def opinion_retrieval_strategy(query, vector_store, k=4):
 
 ```
 
-### 4. 上下文型策略 - 情境整合
+## 11.2.4 上下文型策略 - 情境整合
 
 
 
@@ -620,7 +620,7 @@ def contextual_retrieval_strategy(query, vector_store, k=4, user_context=None):
 
 ```
 
-## 文档评分辅助函数
+# 11.3 文档评分辅助函数
 
 
 ```python
@@ -741,7 +741,7 @@ def score_document_context_relevance(query, context, document):
 
 ```
 
-## 自适应检索的核心函数
+# 11.4 自适应检索的核心函数
 
 
 ```python
@@ -783,7 +783,7 @@ def adaptive_retrieval(query, vector_store, k=4, user_context=None):
 
 ```
 
-## 回答生成
+# 11.5 回答生成
 
 
 ```python
@@ -856,7 +856,7 @@ def generate_response(query, results, query_type):
 
 ```
 
-## 完整的自适应检索 RAG 流程
+# 11.6 完整的自适应检索 RAG 流程
 
 
 ```python
@@ -904,7 +904,7 @@ def rag_with_adaptive_retrieval(pdf_path, query, k=4, user_context=None):
 
 ```
 
-## 评价框架
+# 11.7 评价框架
 
 
 
@@ -1071,7 +1071,7 @@ def compare_responses(results):
 
 ```
 
-## 评估自适应检索系统（自定义查询）
+# 11.8 评估自适应检索系统（自定义查询）
 
 
 ```python

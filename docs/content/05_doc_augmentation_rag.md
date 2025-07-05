@@ -47,7 +47,7 @@ embedding_model = os.getenv("EMBEDDING_MODEL_ID")
 pdf_path = "../../data/AI_Information.en.zh-CN.pdf"
 ```
 
-# 提取文本并识别章节标题
+# 5.1 提取文本并识别章节标题
 
 
 ```python
@@ -74,7 +74,7 @@ def extract_text_from_pdf(pdf_path):
     return all_text  # 返回提取的文本
 ```
 
-# 对提取的文本进行分块
+# 5.2 对提取的文本进行分块
 
 
 ```python
@@ -98,7 +98,7 @@ def chunk_text(text, n, overlap):
     return chunks  # Return the list of text chunks
 ```
 
-# 为文本块生成问题
+# 5.3 为文本块生成问题
 这是对简单 RAG 的关键增强。我们为每个文本块生成可以通过该文本块回答的问题
 
 
@@ -188,7 +188,7 @@ for i, chunk in enumerate(tqdm(text_chunks, desc="处理文本块")):
         break
 ```
 
-# 文本创建嵌入
+# 5.4 文本创建嵌入
 
 
 ```python
@@ -213,7 +213,7 @@ def create_embeddings(text):
 
 ```
 
-# 向量存储创建
+# 5.5 向量存储创建
 
 使用Numpy建立一个简单的向量存储
 
@@ -285,7 +285,7 @@ class SimpleVectorStore:
 
 ```
 
-# 使用问题增强处理文档
+# 5.6 使用问题增强处理文档
 所有步骤整合在一起，用于处理文档、生成问题，并构建增强型向量存储。
 
 
@@ -345,7 +345,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200, questions_per
 
 ```
 
-# 提取和处理文档
+# 5.7 提取和处理文档
 
 
 ```python
@@ -376,7 +376,7 @@ print(f"向量存储包含 {len(vector_store.texts)} 个项目")  # 13*4=52，�
     
 
 
-# 语义检索
+# 5.8 语义检索
 
 实现了一个语义搜索功能，该功能类似于简单的RAG（检索增强生成）实现，但针对我们的增强型向量存储进行了适应性调整。
 
@@ -405,7 +405,7 @@ def semantic_search(query, vector_store, k=5):
 
 ```
 
-# 在向量存储中搜索问题
+# 5.9 在向量存储中搜索问题
 
 
 ```python
@@ -480,7 +480,7 @@ for i, result in enumerate(question_results):
     =====================================
 
 
-# 生成响应的上下文
+# 5.10 生成响应的上下文
 现在我们通过结合相关文档块和问题的信息来准备上下文。
 
 
@@ -520,7 +520,7 @@ def prepare_context(search_results):
 
 ```
 
-# 根据检索的文本块生成回答
+# 5.11 根据检索的文本块生成回答
 
 
 ```python
@@ -587,7 +587,7 @@ print(response_text)
     可解释人工智能（XAI）旨在使人工智能系统的决策过程更加透明易懂，帮助用户理解其决策方式和依据。它被认为很重要是因为能增强对AI系统的信任、提高问责制，并确保其公平性和准确性。
 
 
-# 评估
+# 5.12 评估
 
 
 

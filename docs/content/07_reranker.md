@@ -237,7 +237,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
 
 ```
 
-## 实现基于 LLM 的重排序
+# 7.1 实现基于 LLM 的重排序
 实现基于 LLM 的重排序函数。
 
 
@@ -325,7 +325,7 @@ def rerank_with_llm(query, results, top_n=3):
 
 ```
 
-## 基于简单关键词的重排序
+# 7.2 实现基于简单关键词的重排序
 
 
 ```python
@@ -387,7 +387,7 @@ def rerank_with_keywords(query, results, top_n=3):
 
 ```
 
-## 回答生成
+# 7.3 回答生成
 
 
 ```python
@@ -430,7 +430,7 @@ def generate_response(query, context):
 
 ```
 
-### 具有重排序功能的完整RAG管道
+# 7.4 具有重排序功能的完整RAG管道
 
 到目前为止，我们已经实现了RAG管道的核心组件，包括文档处理、问题回答和重排序。现在，我们将把这些组件结合起来，创建一个完整的RAG管道。
 
@@ -481,7 +481,7 @@ def rag_with_reranking(query, vector_store, reranking_method="llm", top_n=3):
 
 ```
 
-## 评估重排质量
+# 7.5 评估重排质量
 
 
 ```python

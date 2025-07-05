@@ -216,7 +216,7 @@ def create_embeddings(texts):
 
 ```
 
-## 用 RSE 处理文档
+# 8.1 用 RSE 处理文档
 
 
 ```python
@@ -261,7 +261,7 @@ def process_document(pdf_path, chunk_size=800):
 
 ```
 
-## RSE核心算法：计算块值和寻找最佳段落
+# 8.2 RSE核心算法：计算块值和寻找最佳段落
 现在我们已经有了处理文档和为其块生成嵌入向量所需的函数，可以实现RSE的核心算法。
 
 
@@ -367,7 +367,7 @@ def find_best_segments(chunk_values, max_segment_length=20, total_max_length=30,
 
 ```
 
-## 为RAG重建和使用段落
+# 8.3 为RAG重建和使用段落
 
 通过重建和利用文本段落来改进上下文质量和生成效果。
 
@@ -426,7 +426,7 @@ def format_segments_for_context(segments):
 
 ```
 
-## 使用 RSE 上下文生成回答
+# 8.4 使用 RSE 上下文生成回答
 
 
 ```python
@@ -478,7 +478,7 @@ def generate_response(query, context):
 
 ```
 
-## 完整的RSE管道功能
+# 8.5 完整的RSE管道功能
 
 
 ```python
@@ -537,7 +537,7 @@ def rag_with_rse(pdf_path, query, chunk_size=800, irrelevant_chunk_penalty=0.2):
 
 ```
 
-## 与标准检索进行比较
+# 8.6 与标准检索进行比较
 实现一种标准的检索方法，以便与RSE（相关段落提取）进行比较：
 
 
@@ -596,7 +596,7 @@ def standard_top_k_retrieval(pdf_path, query, k=10, chunk_size=800):
 
 ```
 
-# 评估 RSE
+# 8.7 评估 RSE
 
 
 ```python

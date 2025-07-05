@@ -62,7 +62,7 @@ embedding_model = os.getenv("EMBEDDING_MODEL_ID")
 pdf_path = "../../data/AI_Information.en.zh-CN.pdf"
 ```
 
-## 文档处理函数
+# 17.1 文档处理函数
 
 
 ```python
@@ -133,7 +133,7 @@ def chunk_text(text, chunk_size=1000, overlap=200):
     return chunks
 ```
 
-## 向量存储
+# 17.2 向量存储
 
 
 ```python
@@ -219,7 +219,7 @@ class SimpleVectorStore:
         return results
 ```
 
-## 创建嵌入
+# 17.3 创建嵌入
 
 
 ```python
@@ -268,7 +268,7 @@ def create_embeddings(texts):
     return all_embeddings
 ```
 
-## 文档处理流程
+# 17.4 文档处理流程
 
 
 ```python
@@ -305,7 +305,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
     return vector_store
 ```
 
-## 相关性评价函数
+# 17.5 相关性评价函数
 
 
 
@@ -358,7 +358,7 @@ def evaluate_document_relevance(query, document):
         return 0.5  # 出错时默认返回中等评分
 ```
 
-## 网络搜索函数
+# 17.6 网络搜索函数
 
 
 ```python
@@ -501,7 +501,7 @@ def perform_web_search(query):
     return results_text, sources
 ```
 
-## 知识提炼函数
+# 17.7 知识提炼函数
 
 
 
@@ -543,7 +543,7 @@ def refine_knowledge(text):
         return text  # 出错时返回原始文本
 ```
 
-## CRAG 核心处理
+# 17.8 CRAG 核心处理
 
 
 ```python
@@ -637,7 +637,7 @@ def crag_process(query, vector_store, k=3):
     }
 ```
 
-## 生成回答
+# 17.9 生成回答
 
 
 ```python
@@ -705,7 +705,7 @@ def generate_response(query, knowledge, sources):
         return f"抱歉，在尝试回答您的问题“{query}”时遇到了错误。错误信息为：{str(e)}"
 ```
 
-## 评估函数
+# 17.10 评估函数
 
 
 ```python
@@ -898,7 +898,7 @@ def compare_responses(query, crag_response, standard_response, reference_answer=
         return f"比较回答时出错：{str(e)}"
 ```
 
-## 完整的评估流程
+# 17.11 完整的评估流程
 
 
 ```python
@@ -1017,7 +1017,7 @@ def generate_overall_analysis(results):
         return f"生成整体分析失败：{str(e)}"
 ```
 
-## 用测试查询评估 CRAG
+# 17.12 用测试查询评估 CRAG
 
 
 ```python
@@ -1169,6 +1169,6 @@ print(evaluation_results["overall_analysis"])
     **总结**：选择取决于任务需求——CRAG 是“质量优先”的解决方案，标准 RAG 是“效率优先”的默认选项。混合架构（如对高置信答案直接生成，低置信时触发 CRAG）可能是平衡方案。
 
 
-## 本地无法调用 duckduckgo时（需要魔法），可以用serpapi调用
+# 注意：本地无法调用 duckduckgo时（需要魔法），可以用serpapi调用
 
 - https://serpapi.com/ ，创建一个账号，然后获取API key，每月免费100次请求

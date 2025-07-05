@@ -31,7 +31,7 @@ load_dotenv()
 
 
 
-# 从 PDF 文件中提取文本
+# 3.1 从 PDF 文件中提取文本
 
 
 ```python
@@ -58,7 +58,7 @@ def extract_text_from_pdf(pdf_path):
     return all_text  # 返回提取的文本
 ```
 
-# 对提取的文本进行分块
+# 3.2 对提取的文本进行分块
 
 
 ```python
@@ -83,7 +83,7 @@ def chunk_text(text, n, overlap):
 
 ```
 
-# 设置 OpenAI API 客户端
+# 3.3 设置 OpenAI API 客户端
 
 
 
@@ -94,7 +94,7 @@ client = OpenAI(
 )
 ```
 
-# 从 PDF 文件中提取和分块文本
+# 3.4 从 PDF 文件中提取和分块文本
 
 加载 PDF，提取文本，并将其分割成块。
 
@@ -156,7 +156,7 @@ print(text_chunks[0])
     
 
 
-# 创建嵌入
+# 3.5 创建嵌入
 
 
 ```python
@@ -188,7 +188,7 @@ def create_embeddings(texts):
 response = create_embeddings(text_chunks)
 ```
 
-# 实现上下文感知语义搜索
+# 3.6 实现上下文感知语义搜索
 
 修改检索以包含相邻块以获得更好的上下文
 
@@ -256,7 +256,7 @@ def context_enriched_search(query, text_chunks, embeddings, k=1, context_size=1)
     return [text_chunks[i] for i in range(start, end)]
 ```
 
-# 带有上下文检索的查询
+# 3.7 带有上下文检索的查询
 
 
 ```python
@@ -390,7 +390,7 @@ for i, chunk in enumerate(top_chunks):
     =====================================
 
 
-# 基于检索到的片段生成响应
+# 3.8 基于检索到的片段生成响应
 
 
 
@@ -449,7 +449,7 @@ print("AI Response:\n", ai_response)
     总的来说，可解释人工智能是确保AI系统透明、负责且有益于社会的关键因素。
 
 
-# 评估响应质量
+# 3.9 评估响应质量
 
 
 ```python

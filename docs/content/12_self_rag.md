@@ -246,8 +246,8 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
     return chunks, store
 ```
 
-## Self-RAG 核心组件
-### 1. 检索决策
+# 12.1 Self-RAG 核心组件
+## 12.1.1 检索决策
 
 
 ```python
@@ -288,7 +288,7 @@ def determine_if_retrieval_needed(query):
 
 ```
 
-### 2. 相关性评估
+## 12.1.2 相关性评估
 
 
 ```python
@@ -338,7 +338,7 @@ def evaluate_relevance(query, context):
 
 ```
 
-### 3. 支持性评估
+## 12.1.3 支持性评估
 
 
 
@@ -395,7 +395,7 @@ def assess_support(response, context):
 
 ```
 
-### 4. 效用评估
+## 12.1.4 效用评估
 
 
 
@@ -451,7 +451,7 @@ def rate_utility(query, response):
 
 ```
 
-## 回答生成
+# 12.2 回答生成
 
 
 ```python
@@ -498,7 +498,7 @@ def generate_response(query, context=None):
 
 ```
 
-## 完整的 Self-RAG 实现
+# 12.3 完整的 Self-RAG 实现
 
 
 ```python
@@ -617,7 +617,7 @@ def self_rag(query, vector_store, top_k=3):
 
 ```
 
-## 运行完整的 Self-RAG 流程
+# 12.4 运行完整的 Self-RAG 流程
 
 
 ```python
@@ -668,7 +668,7 @@ def run_self_rag_example():
 
 ```
 
-## 评估 Self-RAG 系统与传统 RAG 系统的对比
+# 12.5 评估 Self-RAG 系统与传统 RAG 系统的对比
 
 
 ```python
@@ -758,7 +758,7 @@ def evaluate_rag_approaches(pdf_path, test_queries, reference_answers=None):
 
 ```
 
-## 评估的辅助函数
+# 12.6 评估的辅助函数
 
 
 ```python
@@ -868,7 +868,7 @@ def generate_overall_analysis(results):
 
 ```
 
-## 评估 Self-RAG 系统
+# 12.7 评估 Self-RAG 系统
 最后一步是根据传统的RAG方法评估Self-RAG系统。我们将比较两个系统生成的响应质量，并分析Self-RAG在不同场景下的性能。
 
 

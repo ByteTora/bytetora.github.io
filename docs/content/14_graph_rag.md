@@ -58,7 +58,7 @@ embedding_model = os.getenv("EMBEDDING_MODEL_ID")
 pdf_path = "../../data/AI_Information.en.zh-CN.pdf"
 ```
 
-## 文档处理函数
+# 14.1 文档处理函数
 
 
 ```python
@@ -123,7 +123,7 @@ def chunk_text(text, chunk_size=1000, overlap=200):
 
 ```
 
-## 创建嵌入
+# 14.2 创建嵌入
 
 
 ```python
@@ -164,7 +164,7 @@ def create_embeddings(texts):
 
 ```
 
-## 构建知识图谱
+# 14.3 构建知识图谱
 
 
 ```python
@@ -289,7 +289,7 @@ def build_knowledge_graph(chunks):
 
 ```
 
-## 图形遍历与查询处理
+# 14.4 图形遍历与查询处理
 
 
 
@@ -369,7 +369,7 @@ def traverse_graph(query, graph, embeddings, top_k=5, max_depth=3):
 
 ```
 
-## 回答生成
+# 14.5 回答生成
 
 
 ```python
@@ -416,7 +416,7 @@ def generate_response(query, context_chunks):
 
 ```
 
-## 可视化
+# 14.6 可视化
 
 
 ```python
@@ -481,7 +481,7 @@ def visualize_graph_traversal(graph, traversal_path):
 
 ```
 
-## 完整的 Graph RAG 流程
+# 14.7 完整的 Graph RAG 流程
 
 
 ```python
@@ -528,7 +528,7 @@ def graph_rag_pipeline(pdf_path, query, chunk_size=1000, chunk_overlap=200, top_
 
 ```
 
-## 评估函数
+# 14.8 评估函数
 
 
 ```python
@@ -647,7 +647,7 @@ AI生成的回答与参考答案的匹配程度如何？
 
 ```
 
-## 在简单的文档中进行测试
+# 14.9 在简单的文档中进行测试
 
 
 ```python

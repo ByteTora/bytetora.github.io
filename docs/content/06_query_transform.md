@@ -55,8 +55,8 @@ embedding_model = os.getenv("EMBEDDING_MODEL_ID")
 pdf_path = "../../data/AI_Information.en.zh-CN.pdf"
 ```
 
-## 实现查询转换技术
-### 1. 查询重写（Query Rewriting）
+# 6.1 实现查询转换技术
+## 6.1.1 查询重写（Query Rewriting）
 该技术通过使查询更加具体和详细，从而提高检索的准确性
 
 
@@ -101,7 +101,7 @@ def rewrite_query(original_query):
 
 ```
 
-### 2. 回退提示（Step-back Prompting）
+## 6.1.2 回退提示（Step-back Prompting）
 该技术生成更广泛的查询以检索上下文背景信息。
 
 
@@ -147,7 +147,7 @@ def generate_step_back_query(original_query):
 
 ```
 
-### 3. 子查询分解（Sub-query Decomposition）
+## 6.1.3 子查询分解（Sub-query Decomposition）
 该技术将复杂查询拆分为更简单的组成部分，以实现全面检索。
 
 
@@ -209,7 +209,7 @@ def decompose_query(original_query, num_subqueries=4):
 
 ```
 
-## 展示查询转换技术
+# 6.2 展示查询转换技术
 让我们将这些技术应用到一个示例查询中。
 
 
@@ -279,7 +279,7 @@ for i, query in enumerate(sub_queries, 1):
        4. 如何应对人工智能带来的就业结构变化（例如技能培训、政策调整）？
 
 
-## 构建一个简单的向量存储
+# 6.3 构建一个简单的向量存储
 为了演示查询转换技术如何与检索集成，实现一个简单的向量存储。
 
 
@@ -351,7 +351,7 @@ class SimpleVectorStore:
 
 ```
 
-## 构建一个简单的嵌入模型
+# 6.4 构建一个简单的嵌入模型
 
 
 ```python
@@ -383,7 +383,7 @@ def create_embeddings(text):
 
 ```
 
-## 使用查询转换实现RAG
+# 6.5 使用查询转换实现RAG
 
 
 ```python
@@ -473,7 +473,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
 
 ```
 
-## 基于查询转换的检索增强生成
+# 6.6 基于查询转换的检索增强生成
 
 
 ```python
@@ -552,7 +552,7 @@ def transformed_search(query, vector_store, transformation_type, top_k=3):
 
 ```
 
-## 生成带有转换查询的回答
+# 6.7 生成带有转换查询的回答
 
 
 ```python
@@ -594,7 +594,7 @@ def generate_response(query, context):
 
 ```
 
-## 运行带有查询转换的完整RAG管道
+# 6.8 运行带有查询转换的完整RAG管道
 
 
 ```python
@@ -638,7 +638,7 @@ def rag_with_query_transformation(pdf_path, query, transformation_type=None):
 
 ```
 
-## 评估转换查询
+# 6.9 评估转换查询
 
 
 ```python
@@ -729,7 +729,7 @@ def evaluate_transformations(pdf_path, query, reference_answer=None):
 
 ```
 
-## 评估
+# 6.10 评估
 
 
 ```python

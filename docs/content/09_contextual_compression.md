@@ -245,7 +245,7 @@ def process_document(pdf_path, chunk_size=1000, chunk_overlap=200):
 
 ```
 
-## 实现上下文压缩
+# 9.1 实现上下文压缩
 这是我们的方法的核心——我们将使用大语言模型 (LLM) 来过滤和压缩检索到的内容。
 
 
@@ -333,7 +333,7 @@ def compress_chunk(chunk, query, compression_type="selective"):
 
 ```
 
-## 实现批量压缩
+# 9.2 实现批量压缩
 为了提高效率，在尽可能的情况下一次性压缩多个文本块。
 
 
@@ -373,7 +373,7 @@ def batch_compress_chunks(chunks, query, compression_type="selective"):
 
 ```
 
-## 生成回答
+# 9.3 生成回答
 
 
 ```python
@@ -416,7 +416,7 @@ def generate_response(query, context):
 
 ```
 
-## 上下文压缩的完整 RAG 管道
+# 9.4 上下文压缩的完整 RAG 管道
 
 
 ```python
@@ -487,7 +487,7 @@ def rag_with_compression(pdf_path, query, k=10, compression_type="selective"):
 
 ```
 
-## 标准RAG与压缩增强型RAG的对比分析
+# 9.5 标准RAG与压缩增强型RAG的对比分析
 构建对比函数实现标准RAG与压缩增强型RAG的性能比较：
 
 
@@ -665,7 +665,7 @@ def evaluate_compression(pdf_path, query, reference_answer=None, compression_typ
 
 ```
 
-## 运行我们的完整系统（自定义查询）
+# 9.6 运行我们的完整系统（自定义查询）
 
 
 ```python
@@ -1013,7 +1013,7 @@ results = evaluate_compression(
     **改进建议**：可补充“伦理审查流程”的具体案例（如欧盟AI法案），进一步增强实操性。
 
 
-## 可视化压缩结果
+# 9.7 可视化压缩结果
 
 
 ```python
