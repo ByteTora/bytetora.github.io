@@ -1,4 +1,6 @@
-# Hello-RAG
+<div align='center'>
+    <h1>Hello-RAG</h1>
+</div>
 
 <!-- > ✨ 此仓库为中文的实现过程，并将每一步中文注释，且都跑通实现，目前基于文本进行实现，没有实现多模态的RAG。详细的内容可以去看 [RESOURCES](#RESOURCES) 哦。 -->
 
