@@ -1,4 +1,5 @@
 <div align='center'>
+    <img src="./images/hello-rag.png" alt="alt text" width="100%">
     <h1>Hello-RAG</h1>
 </div>
 
